@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Pokemon Catalog</title>
+</head>
+<body>
+    <h2>Welcome to my Pokemon Catalog.</h2>
+    <div class="catalog-body">
+        <div class="selection">
+            <p class="see-all">
+                <a href="/pokemon/" class="button">See all Pokemon</a>
+            </p>
+        </div>
+        <div class="find-by-name">
+            <h3>Find by name</h3>
+            <form th:action="@{/pokemon/name}" th:object="${pokemon}" method="get">
+                <div class="entry">
+                    <label for="name" class="label">Name</label>
+                    <input type="text" id="name" name="name" th:value="${name}"/>
+                    <input type="submit" value="Search"/>
+                </div>
+            </form>
+        </div>
+        <div class="find-by-number">
+            <h3>Find by Number</h3>
+            <form th:action="@{/pokemon/number}" th:object="${pokemon}" method="get">
+                <div class="entry">
+                    <label for="number" class="label">Number</label>
+                    <input type="text" id="number" name="number" th:value="${number}"/>
+                    <input type="submit" value="Search"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
