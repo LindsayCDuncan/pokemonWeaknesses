@@ -8,6 +8,7 @@
 <body>
 <div>
     <table>
+        <h2>Pokemon Info</h2>
         <thead>
         <tr>
             <th>Name</th>
@@ -20,6 +21,24 @@
             <td th:text="${pokemon.name}"></td>
             <td th:text="${pokemon.number}"></td>
             <td th:text="${pokemon.types}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <table>
+        <h3>Weaknesses</h3>
+        <p>Higher values indicate a greater weakness to that attacking type.</p>
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="typeName: ${weaknessMap.keySet()}">
+            <td th:text="${typeName}"></td>
+            <td th:text="${weaknessMap.get(typeName)}"></td>
         </tr>
         </tbody>
     </table>

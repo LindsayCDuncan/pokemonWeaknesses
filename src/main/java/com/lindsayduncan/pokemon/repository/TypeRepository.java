@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 
 public interface TypeRepository extends MongoRepository<Type, String> {
-    Optional<Type> findByTypeName(String typeName);
+    Type findByType(String type);
 }
