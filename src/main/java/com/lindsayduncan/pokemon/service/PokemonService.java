@@ -10,4 +10,5 @@ public interface PokemonService {
     Optional<Pokemon> findByNumber(String number);
     Iterable listAll();
     Map<String, Double> calculateWeaknesses(List types);
+    Iterable<Pokemon> findByNameRegex(String name);
 }

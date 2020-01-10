@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Pokemon Search Results</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div th:if="${not #lists.isEmpty(pokeList)}">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pokemon : ${pokeList}">
+            <td>
+                <a th:href="@{/pokemon/name(name=${pokemon.name})}" th:text="${pokemon.name}"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:unless="${not #lists.isEmpty(pokeList)}">
+    <p>No pokemon matches that name.</p>
+</div>
+
+</body>
+</html>

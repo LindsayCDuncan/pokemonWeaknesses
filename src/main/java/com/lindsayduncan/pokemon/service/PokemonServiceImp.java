@@ -73,4 +73,9 @@ public class PokemonServiceImp implements PokemonService{
 
         return weaknessMap;
     }
+
+    @Override
+    public Iterable<Pokemon> findByNameRegex(String name) {
+        return repository.findByNameRegex(name);
+    }
 }
