@@ -6,7 +6,8 @@
     <title>Pokemon Catalog</title>
 </head>
 <body>
-    <h2>Welcome to my Pokemon Catalog.</h2>
+    <h2>Pokemon Weaknesses</h2>
+    <p>Search for a pokemon to see what attacks are effective against it.</p>
     <div class="catalog-body">
         <div class="selection">
             <p class="see-all">
@@ -14,7 +15,7 @@
             </p>
         </div>
         <div class="find-by-name">
-            <h3>Find by name</h3>
+            <h3>Find by Name</h3>
             <form th:action="@{/pokemon/name}" th:object="${pokemon}" method="get">
                 <div class="entry">
                     <label for="name" class="label">Name</label>
