@@ -34,15 +34,23 @@
         <tr>
             <th>Type</th>
             <th>Value</th>
+            <th>Attack Effectiveness</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="typeName: ${weaknessMap.keySet()}">
             <td th:text="${typeName}"></td>
             <td th:text="${weaknessMap.get(typeName)}"></td>
+            <td>
+                <span th:if="${weaknessMap.get(typeName)} > '1'" th:style="'color: green;'">Super Effective</span>
+                <span th:if="${weaknessMap.get(typeName)} < '1'" th:style="'color: red;'">Not Very Effective</span>
+            </td>
         </tr>
         </tbody>
     </table>
+    <div>
+        <a href="/">Back</a>
+    </div>
 </div>
 </body>
 </html>

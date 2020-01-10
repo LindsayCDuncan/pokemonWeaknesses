@@ -8,6 +8,9 @@
 </head>
 <body>
     <div>
+        <div>
+            <a href="/">Back</a>
+        </div>
         <table>
             <thead>
             <tr>
@@ -18,12 +21,17 @@
             </thead>
             <tbody>
             <tr th:each="pokemon : ${pokemons}">
-                <td th:text="${pokemon.name}"></td>
+                <td>
+                    <a th:href="@{/pokemon/name(name=${pokemon.name})}" th:text="${pokemon.name}"/>
+                </td>
                 <td th:text="${pokemon.number}"></td>
                 <td th:text="${pokemon.types}"></td>
             </tr>
             </tbody>
         </table>
+        <div>
+            <a href="/">Back</a>
+        </div>
     </div>
 
 </body>
